@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Little Moments | Photobooth</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<main class="container">
+
+    <header class="header">
+        <span class="eyebrow">A LITTLE MEMORY TO KEEP</span>
+        <h1>little moments <span class="heart">♡</span></h1>
+        <p class="subtitle">Your own little photobooth corner.</p>
+    </header>
+
+    <section class="camera-section">
+        <div class="camera-frame">
+            <video id="camera" autoplay playsinline muted></video>
+            <canvas id="canvas" hidden></canvas>
+
+            <div id="cameraPlaceholder" class="camera-placeholder">
+                <span class="camera-icon">♡</span>
+                <p>Your moment starts here</p>
+                <small>Nyalakan kamera untuk memulai</small>
+            </div>
+        </div>
+
+        <div id="countdown" class="countdown" aria-live="polite">
+            Ready when you are ♡
+        </div>
+
+        <div class="camera-actions">
+            <button id="startCamera" class="button button-primary">
+                ♡ Nyalakan Kamera
+            </button>
+
+            <button id="takePhoto" class="button button-dark" disabled>
+                📸 Ambil 4 Foto
+            </button>
+        </div>
+    </section>
+
+    <section class="custom-section">
+        <div class="section-heading">
+            <span class="section-label">01 — MAKE IT PERSONAL</span>
+            <h2>Ceritakan momenmu</h2>
+            <p>Isi sesukamu. Foto sendiri, bareng pasangan, atau teman juga boleh!</p>
+        </div>
+
+        <div class="form-grid">
+            <label class="field">
+                <span>Nama pertama</span>
+                <input id="nameOne" type="text" maxlength="30"
+                       placeholder="Contoh: Ghufran">
+            </label>
+
+            <label class="field">
+                <span>Nama kedua <small>(opsional)</small></span>
+                <input id="nameTwo" type="text" maxlength="30"
+                       placeholder="Contoh: Salwa">
+            </label>
+
+            <label class="field">
+                <span>Tanggal spesial</span>
+                <input id="specialDate" type="date">
+            </label>
+
+            <label class="field">
+                <span>Caption</span>
+                <input id="caption" type="text" maxlength="60"
+                       placeholder="You & Me, Always ♡">
+            </label>
+        </div>
+
+        <p class="form-note">
+            ♡ Boleh dikosongkan. Tanggal bisa diganti kapan saja.
+        </p>
+    </section>
+
+    <section class="frame-section">
+        <div class="section-heading">
+            <span class="section-label">02 — CHOOSE YOUR STYLE</span>
+            <h2>Pilih Your Frame</h2>
+            <p>Pilih desain yang paling cocok dengan momenmu.</p>
+        </div>
+
+        <div class="frame-options">
+            <button class="frame-option active"
+                    data-frame="pink" aria-pressed="true">
+                <span class="frame-preview preview-pink">
+                    <span>♡</span><i></i><i></i><i></i><i></i>
+                </span>
+                <span class="frame-name">Pink Aesthetic</span>
+                <span class="frame-description">Sweet & lovely</span>
+            </button>
+
+            <button class="frame-option"
+                    data-frame="bw" aria-pressed="false">
+                <span class="frame-preview preview-bw">
+                    <span>✦</span><i></i><i></i><i></i><i></i>
+                </span>
+                <span class="frame-name">Black & White</span>
+                <span class="frame-description">Classic & timeless</span>
+            </button>
+
+            <button class="frame-option"
+                    data-frame="retro" aria-pressed="false">
+                <span class="frame-preview preview-retro">
+                    <span>✷</span><i></i><i></i><i></i><i></i>
+                </span>
+                <span class="frame-name">Retro Vintage</span>
+                <span class="frame-description">Warm & nostalgic</span>
+            </button>
+        </div>
+    </section>
+
+    <section class="result-section">
+        <div class="section-heading">
+            <span class="section-label">03 — YOUR MEMORIES</span>
+            <h2>Captured moments</h2>
+            <p>Empat foto kecil untuk menyimpan kenangan.</p>
+        </div>
+
+        <div id="result" class="photo-grid"></div>
+
+        <button id="download" class="button button-download" hidden>
+            ↓ Download Photo Strip
+        </button>
+    </section>
+
+    <footer>
+        <span>made with love ♡</span>
+        <p>A little moment, a lovely memory.</p>
+    </footer>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
